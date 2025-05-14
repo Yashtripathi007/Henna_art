@@ -1,0 +1,32 @@
+body {
+  font-family: 'Arial', sans-serif;
+  font-size: 1.1rem; /* Increased base font size */
+}
+
+nav a {
+  transition: color 0.3s ease;
+  font-size: 1rem; /* Increased nav link font */
+}
+
+button, a.bg-pink-600 {
+  transition: background-color 0.3s ease;
+  font-size: 1rem; /* Increased button text */
+  padding: 0.6rem 1.2rem; /* Bigger buttons */
+}
+
+.gallery-img:hover {
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+}
+
+#lightbox {
+  transition: opacity 0.3s ease;
+}
+
+/* About the Artist Section */
+.about-artist img {
+  transition: transform 0.3s ease;
+  max-width: 110%; /* Slightly larger images */
+}
+
+.about-artist img:hover {
