@@ -1,4 +1,5 @@
 // Load gallery images
+const backendBaseUrl = "https://henna-art.onrender.com";
 function loadDashboardGallery() {
     const galleryGrid = document.getElementById("gallery-grid");
     if (!galleryGrid) {
@@ -8,7 +9,7 @@ function loadDashboardGallery() {
   
     galleryGrid.innerHTML = '<p>Loading gallery images...</p>';
   
-    fetch("/get-gallery")
+    fetch(`${backendBaseUrl}/get-gallery`)
       .then((response) => {
         if (!response.ok) {
           throw new Error(`Server responded with status: ${response.status}`);
@@ -23,7 +24,7 @@ function loadDashboardGallery() {
             div.className = "image-container";
   
             const img = document.createElement("img");
-            img.src = `/Uploads/${image}?t=${Date.now()}`; // Cache-busting
+            img.src = `/uploads/${image}?t=${Date.now()}`; // Cache-busting
             img.alt = "Gallery Image";
             img.className = "gallery-image";
   
@@ -81,7 +82,7 @@ function loadDashboardGallery() {
   // Delete an image
   function deleteImage(filename) {
     if (confirm("Are you sure you want to delete this image?")) {
-      fetch(`/delete-image/${filename}`, { method: "DELETE" })
+      fetch(`${backendBaseUrl}/delete-image/${encodeURIComponent(filename)}`, { method: "DELETE" })
         .then((response) => response.json())
         .then((data) => {
           if (data.success) {
