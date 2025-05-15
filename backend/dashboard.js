@@ -24,7 +24,7 @@ function loadDashboardGallery() {
             div.className = "image-container";
   
             const img = document.createElement("img");
-            img.src = `/uploads/${image}?t=${Date.now()}`; // Cache-busting
+            img.src = `${backendBaseUrl}/uploads/${image}?t=${Date.now()}`; // Cache-busting
             img.alt = "Gallery Image";
             img.className = "gallery-image";
   
