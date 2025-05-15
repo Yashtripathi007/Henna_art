@@ -33,7 +33,7 @@ function loadGallery() {
 
   galleryGrid.innerHTML = '<p class="text-center text-gray-600">Loading gallery...</p>';
 
-  fetch("http://localhost:3000/get-gallery") // Use absolute backend URL
+  fetch("https://henna-art.onrender.com/get-gallery") // Use absolute backend URL
     .then((response) => {
       if (!response.ok) {
         throw new Error(`Server responded with status: ${response.status}`);
@@ -51,7 +51,7 @@ function loadGallery() {
           imgDiv.className = "mb-6";
 
           const imgElement = document.createElement("img");
-          imgElement.src = `http://localhost:3000/Uploads/${image}?t=${Date.now()}`; // Absolute backend URL
+          imgElement.src = `https://henna-art.onrender.com/Uploads/${image}?t=${Date.now()}`; // Absolute backend URL
           imgElement.alt = "Henna Design";
           imgElement.classList.add(
             "w-full",
@@ -158,7 +158,7 @@ function submitBookingForm(event) {
   const notes = document.getElementById("notes").value;
 
   if (name && email && date && service) {
-    fetch("/submit-booking", {
+    fetch("https://henna-art.onrender.com/submit-booking", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
