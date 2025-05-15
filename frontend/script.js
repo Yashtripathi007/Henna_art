@@ -51,7 +51,7 @@ function loadGallery() {
           imgDiv.className = "mb-6";
 
           const imgElement = document.createElement("img");
-          imgElement.src = `https://henna-art.onrender.com/Uploads/${image}?t=${Date.now()}`; // Absolute backend URL
+          imgElement.src = `https://henna-art.onrender.com/uploads/${image}?t=${Date.now()}`; // Absolute backend URL
           imgElement.alt = "Henna Design";
           imgElement.classList.add(
             "w-full",
@@ -158,7 +158,7 @@ function submitBookingForm(event) {
   const notes = document.getElementById("notes").value;
 
   if (name && email && date && service) {
-    fetch("https://henna-art.onrender.com/submit-booking", {
+    fetch(`https://henna-art.onrender.com/submit-booking`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
