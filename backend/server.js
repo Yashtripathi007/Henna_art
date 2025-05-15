@@ -118,7 +118,7 @@ app.get("/get-gallery", (req, res) => {
   }
 });
 
-app.use("/Uploads", express.static(uploadDir, { maxAge: 0 }));
+app.use("/uploads", express.static(uploadDir, { maxAge: 0 }));
 app.use(express.static(__dirname));
 
 app.delete("/delete-image/:filename", (req, res) => {

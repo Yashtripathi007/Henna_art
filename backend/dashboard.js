@@ -55,7 +55,7 @@ function loadDashboardGallery() {
     const formData = new FormData(form);
     const messageDiv = document.getElementById("upload-message");
   
-    fetch("/upload-image", {
+    fetch(`${backendBaseUrl}/upload-image`, {
       method: "POST",
       body: formData,
     })
